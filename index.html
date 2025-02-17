@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fullstack Developer | Professional Portfolio</title>
+    <title>Mevlüt Kaan Karakoç |Fullstack Developer | Professional Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body {
@@ -21,15 +21,13 @@
             background: #1e1e1e;
             border-radius: 8px;
             box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
-        }
-        .content {
-            text-align: left;
-            padding-left: 20px;
+            text-align: center;
+            width: 90%;
         }
         h1, h2 {
             border-bottom: 2px solid #0f0;
             padding-bottom: 5px;
-            margin-left: 20px;
+            margin-bottom: 20px;
         }
         a {
             color: #0f0;
@@ -44,6 +42,7 @@
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+            text-align: left;
         }
         .profile-image {
             width: 150px;
@@ -52,9 +51,6 @@
             object-fit: cover;
             border: 3px solid #0f0;
             margin-bottom: 15px;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
         }
         .blinking-cursor::after {
             content: "_";
@@ -65,7 +61,7 @@
         }
         ul {
             list-style-type: none;
-            padding-left: 20px;
+            padding: 0;
         }
         li {
             padding: 5px 0;
@@ -74,35 +70,69 @@
             margin-right: 10px;
             color: #0f0;
         }
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            .profile-image {
+                width: 120px;
+                height: 120px;
+            }
+            .container {
+                padding: 15px;
+            }
+            .terminal {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.2em;
+            }
+            h2 {
+                font-size: 1em;
+            }
+            ul {
+                font-size: 0.9em;
+            }
+        }
+        @media (max-width: 400px) {
+            .profile-image {
+                width: 100px;
+                height: 100px;
+            }
+            .container {
+                padding: 10px;
+            }
+            .terminal {
+                padding: 10px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <img src="/images/kaan.jpg" alt="Profile Picture" class="profile-image">
-        <h1><i class="fas fa-terminal"></i> root@kaan:~# cat MevlütKaanKarakoç.md <span class="blinking-cursor"></span></h1>
+        <img src="images/kaan.jpg" alt="Profile Picture" class="profile-image">
+        <h1><i class="fas fa-terminal"></i> root@kaan:~# cat MevlutKaanKarakoç.md <span class="blinking-cursor"></span></h1>
         <div class="terminal">
-            <div class="content">
-                <h2>About Me</h2>
-                <p>Fullstack Developer | Mobile App Developer | Linux Enthusiast | Ethical Hacker | Computer Engineer</p>
+            <h2>About Me</h2>
+            <p>Fullstack Developer | Mobile App Developer | Linux Enthusiast | Ethical Hacker | Software Engineer</p>
 
-                <h2>Skills</h2>
-                <ul>
-                    <li><i class="fas fa-server icon"></i> Linux Administration</li>
-                    <li><i class="fas fa-code icon"></i> Bash & Python Scripting</li>
-                    <li><i class="fas fa-shield-alt icon"></i> Web Security & Pentesting</li>
-                    <li><i class="fas fa-network-wired icon"></i> Server Deployment & Hardening</li>
-                    <li><i class="fas fa-laptop-code icon"></i> React & Django Development</li>
-                    <li><i class="fas fa-mobile-alt icon"></i> Mobile App Development (React Native, Flutter)</li>
-                    <li><i class="fas fa-database icon"></i> Backend Development (Django, FastAPI, Node.js)</li>
-                </ul>
+            <h2>Skills</h2>
+            <ul>
+                <li><i class="fas fa-server icon"></i> Linux Administration</li>
+                <li><i class="fas fa-code icon"></i> Bash & Python Scripting</li>
+                <li><i class="fas fa-shield-alt icon"></i> Web Security & Pentesting</li>
+                <li><i class="fas fa-network-wired icon"></i> Server Deployment & Hardening</li>
+                <li><i class="fas fa-laptop-code icon"></i> React & Django Development</li>
+                <li><i class="fas fa-mobile-alt icon"></i> Mobile App Development (React Native, Flutter)</li>
+                <li><i class="fas fa-database icon"></i> Backend Development (Django, FastAPI, Node.js)</li>
+            </ul>
 
-                <h2>Projects</h2>
-                <p>[ <a href="https://github.com/kaankarakoc42"><i class="fab fa-github"></i> GitHub</a> ] - Check out my open-source contributions.</p>
-
-                <h2>Contact</h2>
-                <p><i class="fas fa-envelope icon"></i> Email: <a href="mailto:karakockaan326@gmail.com">karakockaan326@gmail.com</a></p>
-                <p><i class="fab fa-linkedin icon"></i> LinkedIn: <a href="https://www.linkedin.com/in/mevlutkaankarakoc">linkedin.com/in/mevlutkaankarakoc/</a></p>
-            </div>
+            <h2>Projects</h2>
+            <p>[ <a href="#"><i class="fab fa-github"></i> GitHub</a> ] - Check out my open-source contributions.</p>
+            
+            <h2>Contact</h2>
+            <p><i class="fas fa-envelope icon"></i> Email: <a href="mailto:karakockaan326@gmail.com">karakockaan326@gmail.com</a></p>
+            <p><i class="fab fa-linkedin icon"></i> LinkedIn: <a href="https://www.linkedin.com/in/mevlutkaankarakoc/">linkedin.com/in/mevlutkaankarakoc</a></p>
         </div>
     </div>
 </body>
