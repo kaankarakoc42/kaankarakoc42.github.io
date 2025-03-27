@@ -3,137 +3,1251 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mevlüt Kaan Karakoç |Fullstack Developer | Professional Portfolio</title>
+    <meta name="description" content="Mevlüt Kaan Karakoç - Professional Fullstack Developer specializing in web development, mobile apps, and cybersecurity. View my portfolio and projects.">
+    <meta name="keywords" content="Fullstack Developer, Mobile App Developer, Linux, Ethical Hacker, Software Engineer">
+    <title>Mevlüt Kaan Karakoç | Fullstack Developer | Professional Portfolio</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            background-color: #121212;
-            color: #d4d4d4;
-            font-family: "Fira Code", monospace;
+        :root {
+            --primary-color: #00ff9d;
+            --secondary-color: #00ffcc;
+            --bg-color: #0a0a0a;
+            --bg-card: #1a1a1a;
+            --text-color: #ffffff;
+            --text-light: #a0a0a0;
+            --accent-color: #ff3366;
+            --border-color: #333333;
+            --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        }
+
+        * {
             margin: 0;
-            padding: 20px;
-            text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+            padding: 0;
+            box-sizing: border-box;
         }
-        .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 20px;
-            background: #1e1e1e;
-            border-radius: 8px;
-            box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
-            text-align: center;
-            width: 90%;
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
         }
-        h1, h2 {
-            border-bottom: 2px solid #0f0;
-            padding-bottom: 5px;
-            margin-bottom: 20px;
+
+        .navbar {
+            background: rgba(10, 10, 10, 0.95);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
         }
-        a {
-            color: #0f0;
+
+        .navbar-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Fira Code', monospace;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
             text-decoration: none;
-            transition: color 0.3s;
+            text-shadow: 0 0 10px rgba(0, 255, 157, 0.3);
         }
-        a:hover {
-            color: #00ff99;
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
         }
-        .terminal {
-            background: #222;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
-            text-align: left;
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
         }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .hero {
+            padding: 8rem 2rem 4rem;
+            background: radial-gradient(circle at center, #1a1a1a 0%, #0a0a0a 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(0, 255, 157, 0.1), rgba(0, 255, 204, 0.1));
+            z-index: 1;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
         .profile-image {
-            width: 150px;
-            height: 150px;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid #0f0;
-            margin-bottom: 15px;
+            border: 4px solid transparent;
+            background: var(--gradient);
+            padding: 4px;
+            margin-bottom: 2rem;
+            box-shadow: 0 0 20px rgba(0, 255, 157, 0.3);
+            transition: transform 0.3s ease;
         }
-        .blinking-cursor::after {
-            content: "_";
-            animation: blink 1s infinite;
+
+        .profile-image:hover {
+            transform: scale(1.05) rotate(5deg);
         }
-        @keyframes blink {
-            50% { opacity: 0; }
+
+        .hero h1 {
+            font-family: 'Fira Code', monospace;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+            text-shadow: 0 0 10px rgba(0, 255, 157, 0.3);
         }
-        ul {
-            list-style-type: none;
-            padding: 0;
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
         }
-        li {
-            padding: 5px 0;
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 3rem;
         }
-        .icon {
-            margin-right: 10px;
-            color: #0f0;
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-family: 'Fira Code', monospace;
         }
-        @media (max-width: 600px) {
-            body {
-                padding: 10px;
+
+        .btn-primary {
+            background: var(--gradient);
+            color: var(--bg-color);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 255, 157, 0.3);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: var(--bg-color);
+            transform: translateY(-2px);
+        }
+
+        .section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Fira Code', monospace;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--text-color);
+            text-align: center;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: var(--gradient);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 1rem;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+
+        .skill-card:hover::before {
+            opacity: 0.1;
+        }
+
+        .skill-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .skill-card h3 {
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+            position: relative;
+            z-index: 2;
+        }
+
+        .skill-card p {
+            color: var(--text-light);
+            position: relative;
+            z-index: 2;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--bg-card);
+            border-radius: 1rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover .project-image {
+            transform: scale(1.05);
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-content h3 {
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+            font-family: 'Fira Code', monospace;
+        }
+
+        .project-content p {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .contact-section {
+            background: radial-gradient(circle at center, #1a1a1a 0%, #0a0a0a 100%);
+            position: relative;
+        }
+
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(0, 255, 157, 0.1), rgba(0, 255, 204, 0.1));
+            z-index: 1;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-card {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover .contact-icon {
+            transform: scale(1.1);
+            color: var(--secondary-color);
+        }
+
+        .contact-card h3 {
+            margin-bottom: 1rem;
+            color: var(--text-color);
+            font-family: 'Fira Code', monospace;
+        }
+
+        .contact-card p {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        .contact-card a {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: var(--gradient);
+            color: var(--bg-color);
+            text-decoration: none;
+            border-radius: 0.5rem;
+            font-family: 'Fira Code', monospace;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .contact-card a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 255, 157, 0.3);
+        }
+
+        .footer {
+            background: var(--bg-card);
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .social-links a {
+            color: var(--text-light);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        /* Hidden onion section styles */
+        .onion-section {
+            position: fixed;
+            bottom: -100%;
+            left: 0;
+            width: 100%;
+            background: var(--bg-card);
+            padding: 2rem;
+            border-top: 1px solid var(--border-color);
+            transition: bottom 0.5s ease;
+            z-index: 1000;
+            text-align: center;
+        }
+
+        .onion-section.visible {
+            bottom: 0;
+        }
+
+        .onion-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .onion-content h3 {
+            color: var(--primary-color);
+            font-family: 'Fira Code', monospace;
+            margin-bottom: 1rem;
+        }
+
+        .onion-content p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .onion-link {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(135deg, #ff3366, #ff6b6b);
+            color: var(--bg-color);
+            text-decoration: none;
+            border-radius: 0.5rem;
+            font-family: 'Fira Code', monospace;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .onion-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.2),
+                transparent
+            );
+            transition: 0.5s;
+        }
+
+        .onion-link:hover::before {
+            left: 100%;
+        }
+
+        .onion-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 51, 102, 0.3);
+        }
+
+        .close-onion {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            color: var(--text-light);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .close-onion:hover {
+            color: var(--primary-color);
+            transform: rotate(90deg);
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 1rem;
             }
-            .profile-image {
-                width: 120px;
-                height: 120px;
+
+            .navbar-content {
+                flex-direction: row;
+                justify-content: space-between;
+                width: 100%;
             }
-            .container {
-                padding: 15px;
+
+            .menu-toggle {
+                display: block;
+                background: none;
+                border: none;
+                color: var(--text-color);
+                font-size: 1.5rem;
+                cursor: pointer;
+                padding: 0.5rem;
+                z-index: 1001;
+                
             }
-            .terminal {
-                padding: 15px;
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                height: 100vh;
+                background: var(--bg-card);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+                transition: right 0.3s ease;
+                padding: 2rem;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
             }
-            h1 {
-                font-size: 1.2em;
+
+            .nav-links.active {
+                right: 0;
             }
-            h2 {
-                font-size: 1em;
+
+            .nav-links a {
+                font-size: 1.2rem;
             }
-            ul {
-                font-size: 0.9em;
+
+            .hero {
+                padding: 6rem 1rem 3rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .section {
+                padding: 3rem 1rem;
             }
         }
-        @media (max-width: 400px) {
-            .profile-image {
-                width: 100px;
-                height: 100px;
-            }
-            .container {
-                padding: 10px;
-            }
-            .terminal {
-                padding: 10px;
-            }
+
+        /* Add smooth scrolling to the whole page */
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        /* Add active section highlighting */
+        .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        /* Add section transition effects */
+        .section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Add scroll progress indicator */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gradient);
+            transform-origin: 0%;
+            transform: scaleX(0);
+            z-index: 1001;
+        }
+
+        /* Add scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--gradient);
+            color: var(--bg-color);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 0 15px rgba(0, 255, 157, 0.3);
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 20px rgba(0, 255, 157, 0.5);
+        }
+
+        /* Easter egg styles */
+        .matrix-rain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .matrix-rain.visible {
+            opacity: 0.1;
+        }
+
+        .secret-section {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 1rem;
+            border: 1px solid var(--primary-color);
+            text-align: center;
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 1001;
+        }
+
+        .secret-section.visible {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--bg-card);
+            padding: 0.5rem;
+            border-radius: 50%;
+            cursor: pointer;
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            display: block;
+        }
+
+        .theme-toggle.visible {
+            opacity: 1;
+        }
+
+        .theme-toggle i {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(0, 255, 157, 0.3);
+        }
+
+        /* Add hidden flag styles */
+        .hidden-flag {
+            position: fixed;
+            opacity: 0;
+            pointer-events: none;
+            z-index: 9999;
+            font-family: 'Fira Code', monospace;
+            color: var(--primary-color);
+            text-shadow: 0 0 10px rgba(0, 255, 157, 0.3);
+            transition: opacity 0.3s ease;
+        }
+
+        .hidden-flag.visible {
+            opacity: 1;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <img src="images/kaan.jpg" alt="Profile Picture" class="profile-image">
-        <h1><i class="fas fa-terminal"></i> root@kaan:~# cat MevlütKaanKarakoç.md<span class="blinking-cursor"></span></h1>
-        <div class="terminal">
-            <h2>About Me</h2>
-            <p>Fullstack Developer | Mobile App Developer | Linux Enthusiast | Ethical Hacker | Software Engineer</p>
+    <!-- Add scroll progress bar -->
+    <div class="scroll-progress"></div>
 
-            <h2>Skills</h2>
-            <ul>
-                <li><i class="fas fa-server icon"></i> Linux Administration</li>
-                <li><i class="fas fa-code icon"></i> Bash & Python Scripting</li>
-                <li><i class="fas fa-shield-alt icon"></i> Web Security & Pentesting</li>
-                <li><i class="fas fa-network-wired icon"></i> Server Deployment & Hardening</li>
-                <li><i class="fas fa-laptop-code icon"></i> React & Django Development</li>
-                <li><i class="fas fa-mobile-alt icon"></i> Mobile App Development (React Native, Flutter)</li>
-                <li><i class="fas fa-database icon"></i> Backend Development (Django, FastAPI, Node.js)</li>
-            </ul>
+    <!-- Add scroll to top button -->
+    <div class="scroll-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
 
-            <h2>Projects</h2>
-            <p>[ <a href="https://github.com/kaankarakoc42"><i class="fab fa-github"></i> GitHub</a> ] - Check out my open-source contributions.</p>
-            
-            <h2>Contact</h2>
-            <p><i class="fas fa-envelope icon"></i> Email: <a href="mailto:karakockaan326@gmail.com">karakockaan326@gmail.com</a></p>
-            <p><i class="fab fa-linkedin icon"></i> LinkedIn: <a href="https://www.linkedin.com/in/mevlutkaankarakoc/">linkedin.com/in/mevlutkaankarakoc</a></p>
+    <!-- Add matrix rain canvas -->
+    <canvas class="matrix-rain"></canvas>
+
+    <!-- Add theme toggle -->
+    <div class="theme-toggle">
+        <i class="fas fa-palette"></i>
+    </div>
+
+    <!-- Add secret section -->
+    <div class="secret-section">
+        <h3>You've Found Me!</h3>
+        <p>Congratulations on discovering this hidden section!</p>
+        <p>Here's a special message just for you:</p>
+        <p class="secret-message"></p>
+        <br>
+        <button class="btn btn-outline close-secret">Close</button>
+    </div>
+
+    <!-- Add hidden flags -->
+    <div class="hidden-flag" id="flag1">MKK{1_f0und_th3_f1rst_fl4g}</div>
+    <div class="hidden-flag" id="flag2">MKK{h1dd3n_1n_th3_s0urc3}</div>
+    <div class="hidden-flag" id="flag3">MKK{k0n4m1_c0d3_1s_th3_k3y}</div>
+    <div class="hidden-flag" id="flag4">MKK{th3m3_t0ggl3_h1d3s_1t}</div>
+
+    <nav class="navbar">
+        <div class="navbar-content">
+            <a href="#" class="logo">MKK</a>
+            <button id="menuToggle" class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <img src="images/kaan.jpg" alt="Mevlüt Kaan Karakoç" class="profile-image">
+            <h1>Mevlüt Kaan Karakoç</h1>
+            <p>Fullstack Developer | Mobile App Developer | Linux Enthusiast | Ethical Hacker</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">Get in Touch</a>
+                <a href="#projects" class="btn btn-outline">View Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <h2 class="section-title">About Me</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <i class="fas fa-code skill-icon"></i>
+                <h3>Fullstack Development</h3>
+                <p>Specialized in building scalable web applications using modern technologies and best practices.</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-mobile-alt skill-icon"></i>
+                <h3>Mobile Development</h3>
+                <p>Creating cross-platform mobile applications using React Native and Flutter.</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-shield-alt skill-icon"></i>
+                <h3>Cybersecurity</h3>
+                <p>Expert in web security, penetration testing, and ethical hacking.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <i class="fas fa-server skill-icon"></i>
+                <h3>Linux Administration</h3>
+                <p>Server management, deployment, and system optimization.</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-laptop-code skill-icon"></i>
+                <h3>Frontend Development</h3>
+                <p>React, JavaScript, HTML5, CSS3, and modern UI frameworks.</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-database skill-icon"></i>
+                <h3>Backend Development</h3>
+                <p>Django, FastAPI, Node.js, and database management.</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-network-wired skill-icon"></i>
+                <h3>DevOps</h3>
+                <p>CI/CD, Docker, Kubernetes, and cloud services.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <img src="images/taskdone.png" alt="Project 1" class="project-image">
+                <div class="project-content">
+                    <h3>Web Application</h3>
+                    <p>A full-stack web application built with React and Django.</p>
+                    <a href="https://taskdone.com.tr" class="btn btn-outline">View Project</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="images/mobile.jpg" alt="Project 2" class="project-image">
+                <div class="project-content">
+                    <h3>Mobile App</h3>
+                    <p>Cross-platform mobile application using React Native.</p>
+                    <a href="https://taskdone.com.tr" class="btn btn-outline">View Project</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="images/secode.png" alt="Project 3" class="project-image">
+                <div class="project-content">
+                    <h3>Cyber Security Community</h3>
+                    <p>I have created a community for cyber security,In secode we are sharpening your skills for ctf competitions and industrial security tasks.</p>
+                    <a href="https://secodecommunity.github.io" class="btn btn-outline">View Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+        <h2 class="section-title">Get in Touch</h2>
+        <div class="contact-grid">
+            <div class="contact-card">
+                <i class="fas fa-envelope contact-icon"></i>
+                <h3>Email</h3>
+                <p>karakockaan326@gmail.com</p>
+                <a href="mailto:karakockaan326@gmail.com">Send Email</a>
+            </div>
+            <div class="contact-card">
+                <i class="fab fa-linkedin contact-icon"></i>
+                <h3>LinkedIn</h3>
+                <p>linkedin.com/in/mevlutkaankarakoc</p>
+                <a href="https://www.linkedin.com/in/mevlutkaankarakoc/" target="_blank">Connect</a>
+            </div>
+            <div class="contact-card">
+                <i class="fab fa-github contact-icon"></i>
+                <h3>GitHub</h3>
+                <p>github.com/kaankarakoc42</p>
+                <a href="https://github.com/kaankarakoc42" target="_blank">View Profile</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="social-links">
+            <a href="https://github.com/kaankarakoc42"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/mevlutkaankarakoc/"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:karakockaan326@gmail.com"><i class="fas fa-envelope"></i></a>
+            <a href="#" id="onion-trigger" title="Click to discover something hidden"><i class="fas fa-user-secret"></i></a>
+        </div>
+        <p>&copy; 2024 Mevlüt Kaan Karakoç. All rights reserved.</p>
+    </footer>
+
+    <!-- Hidden onion section -->
+    <div class="onion-section">
+        <div class="onion-content">
+            <i class="fas fa-times close-onion"></i>
+            <h3>Hidden Gateway</h3>
+            <p>You've discovered a secret entrance to my onion mirror. Access my site through the Tor network for enhanced privacy and security.</p>
+            <a href="http://q64dnpsu2js22axo22dln5xvnripijrvhmxbpyvliu2bggtihtzadvyd.onion" class="onion-link" target="_blank">
+                <i class="fas fa-user-secret"></i> Enter the Hidden Gateway
+            </a>
         </div>
     </div>
+
+    <script>
+        // Scroll progress indicator
+        window.addEventListener('scroll', () => {
+            const scrollProgress = document.querySelector('.scroll-progress');
+            const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            scrollProgress.style.transform = `scaleX(${scrollPercent / 100})`;
+        });
+
+        // Section visibility detection
+        const sections = document.querySelectorAll('.section');
+        const navLinksItems = document.querySelectorAll('.nav-links a');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    const sectionId = entry.target.id;
+                    
+                    // Update active navigation link
+                    navLinksItems.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    // Add active class to clicked link
+                    navLinksItems.forEach(link => link.classList.remove('active'));
+                    this.classList.add('active');
+
+                    // Smooth scroll to target
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add initial active state to first section
+        window.addEventListener('load', () => {
+            const firstSection = document.querySelector('.section');
+            if (firstSection) {
+                const firstSectionId = firstSection.id;
+                navLinksItems.forEach(link => {
+                    if (link.getAttribute('href') === `#${firstSectionId}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+
+        // Scroll to top button
+        const scrollTop = document.querySelector('.scroll-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollTop.classList.add('visible');
+            } else {
+                scrollTop.classList.remove('visible');
+            }
+        });
+
+        scrollTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Onion section functionality
+        const onionTrigger = document.getElementById('onion-trigger');
+        const onionSection = document.querySelector('.onion-section');
+        const closeOnion = document.querySelector('.close-onion');
+
+        onionTrigger.addEventListener('click', (e) => {
+            e.preventDefault();
+            onionSection.classList.add('visible');
+        });
+
+        closeOnion.addEventListener('click', () => {
+            onionSection.classList.remove('visible');
+        });
+
+        // Close onion section when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!onionSection.contains(e.target) && !onionTrigger.contains(e.target)) {
+                onionSection.classList.remove('visible');
+            }
+        });
+
+        // Easter Eggs Implementation
+        let konamiCode = [];
+        let keySequence = [];
+        let matrixRainActive = false;
+
+        // Konami Code
+        document.addEventListener('keydown', (e) => {
+            konamiCode.push(e.key);
+            if (konamiCode.length > 10) konamiCode.shift();
+            
+            if (konamiCode.join('') === 'ArrowUpArrowUpArrowDownArrowDownArrowLeftArrowRightArrowLeftArrowRightba') {
+                toggleMatrixRain();
+                konamiCode = [];
+            }
+        });
+
+        // Matrix Rain Effect
+        const canvas = document.querySelector('.matrix-rain');
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        const matrix = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%";
+        const matrixArray = matrix.split("");
+        const fontSize = 14;
+        const columns = canvas.width / fontSize;
+        const drops = [];
+
+        for (let i = 0; i < columns; i++) {
+            drops[i] = 1;
+        }
+
+        function drawMatrixRain() {
+            if (!matrixRainActive) return;
+
+            ctx.fillStyle = "rgba(0, 0, 0, 0.04)";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = "#0F0";
+            ctx.font = fontSize + "px monospace";
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = matrixArray[Math.floor(Math.random() * matrixArray.length)];
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+
+            requestAnimationFrame(drawMatrixRain);
+        }
+
+        function toggleMatrixRain() {
+            matrixRainActive = !matrixRainActive;
+            canvas.classList.toggle('visible');
+            if (matrixRainActive) {
+                drawMatrixRain();
+            }
+        }
+
+        // Key Sequence Detection
+        document.addEventListener('keydown', (e) => {
+            keySequence.push(e.key);
+            if (keySequence.length > 5) keySequence.shift();
+            
+            if (keySequence.join('') === 'secret') {
+                showSecretSection();
+                keySequence = [];
+            }
+        });
+
+        // Theme Toggle
+        const themeToggle = document.querySelector('.theme-toggle');
+        let isDarkTheme = true;
+
+        function toggleTheme() {
+            isDarkTheme = !isDarkTheme;
+            document.body.style.backgroundColor = isDarkTheme ? '#0a0a0a' : '#ffffff';
+            document.body.style.color = isDarkTheme ? '#ffffff' : '#0a0a0a';
+            themeToggle.style.color = isDarkTheme ? '#00ff9d' : '#ff3366';
+        }
+
+        // Secret Section
+        const secretSection = document.querySelector('.secret-section');
+        const secretMessage = document.querySelector('.secret-message');
+        const messages = [
+            "You're a great detective!",
+            "Welcome to the secret club!",
+            "You've found the hidden treasure!",
+            "You're one of the few who made it here!",
+            "You're awesome for finding this!"
+        ];
+
+        function showSecretSection() {
+            secretMessage.textContent = messages[Math.floor(Math.random() * messages.length)];
+            secretSection.classList.add('visible');
+        }
+
+        document.querySelector('.close-secret').addEventListener('click', () => {
+            secretSection.classList.remove('visible');
+        });
+
+        // Console Easter Egg
+        console.log('%cWelcome to the console!', 'color: #00ff9d; font-size: 20px; font-weight: bold;');
+        console.log('%cIf you\'re reading this, you\'re probably a developer too!', 'color: #00ffcc; font-size: 16px;');
+        console.log('%cTry typing "secret" on your keyboard...', 'color: #ff3366; font-size: 14px;');
+
+        // Show theme toggle on hover
+        document.addEventListener('mousemove', (e) => {
+            if (e.clientY < 100) {
+                themeToggle.classList.add('visible');
+            } else {
+                themeToggle.classList.remove('visible');
+            }
+        });
+
+        // Add click event for theme toggle
+        themeToggle.addEventListener('click', toggleTheme);
+
+        // Mobile menu functionality
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.querySelector('i').classList.toggle('fa-bars');
+            menuToggle.querySelector('i').classList.toggle('fa-times');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuToggle.querySelector('i').classList.add('fa-bars');
+                menuToggle.querySelector('i').classList.remove('fa-times');
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+                navLinks.classList.remove('active');
+                menuToggle.querySelector('i').classList.add('fa-bars');
+                menuToggle.querySelector('i').classList.remove('fa-times');
+            }
+        });
+        function hideOnMobile() {
+    const element = document.getElementById("menuToggle");
+    if (window.innerWidth >= 600) {
+      element.style.display = "none";
+    } else {
+      element.style.display = "block";
+    }
+  }
+
+  // Run on page load
+  hideOnMobile();
+
+  // Run on window resize
+  window.addEventListener("resize", hideOnMobile);
+
+        // Hidden flags functionality
+        const flags = {
+            flag1: false, // Found through console
+            flag2: false, // Found through source code
+            flag3: false, // Found through Konami code
+            flag4: false  // Found through theme toggle
+        };
+
+        // Flag 1: Console flag
+        console.log('%cMKK{1_f0und_th3_f1rst_fl4g}', 'color: #00ff9d; font-size: 20px; font-weight: bold;');
+        console.log('%cIf you\'re reading this, you\'re probably a developer too!', 'color: #00ffcc; font-size: 16px;');
+        console.log('%cTry typing "secret" on your keyboard...', 'color: #ff3366; font-size: 14px;');
+
+        // Flag 2: Source code flag (already in HTML)
+        // Flag 3: Konami code flag
+        document.addEventListener('keydown', (e) => {
+            konamiCode.push(e.key);
+            if (konamiCode.length > 10) konamiCode.shift();
+            
+            if (konamiCode.join('') === 'ArrowUpArrowUpArrowDownArrowDownArrowLeftArrowRightArrowLeftArrowRightba') {
+                toggleMatrixRain();
+                if (!flags.flag3) {
+                    flags.flag3 = true;
+                    document.getElementById('flag3').classList.add('visible');
+                    setTimeout(() => {
+                        document.getElementById('flag3').classList.remove('visible');
+                    }, 3000);
+                }
+                konamiCode = [];
+            }
+        });
+
+        // Flag 4: Theme toggle flag
+        function toggleTheme() {
+            isDarkTheme = !isDarkTheme;
+            document.body.style.backgroundColor = isDarkTheme ? '#0a0a0a' : '#ffffff';
+            document.body.style.color = isDarkTheme ? '#ffffff' : '#0a0a0a';
+            themeToggle.style.color = isDarkTheme ? '#00ff9d' : '#ff3366';
+            
+            if (!flags.flag4) {
+                flags.flag4 = true;
+                document.getElementById('flag4').classList.add('visible');
+                setTimeout(() => {
+                    document.getElementById('flag4').classList.remove('visible');
+                }, 3000);
+            }
+        }
+
+        // Add flag discovery hints
+        const hints = [
+            "Check the console for hidden messages...",
+            "The source code might contain something interesting...",
+            "Try the Konami code...",
+            "Toggle the theme to discover more..."
+        ];
+
+        // Show random hints in console
+        setInterval(() => {
+            const randomHint = hints[Math.floor(Math.random() * hints.length)];
+            console.log(`%c${randomHint}`, 'color: #ff3366; font-style: italic;');
+        }, 30000);
+    </script>
 </body>
 </html>
