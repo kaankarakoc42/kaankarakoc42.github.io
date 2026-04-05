@@ -3,21 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mevlüt Kaan Karakoç - Professional Fullstack Developer specializing in web development, mobile apps, and cybersecurity. View my portfolio and projects.">
-    <meta name="keywords" content="Fullstack Developer, Mobile App Developer, Linux, Ethical Hacker, Software Engineer">
-    <title>Mevlüt Kaan Karakoç | Fullstack Developer | Professional Portfolio</title>
+    <meta name="description" content="Backend Developer specializing in Go, microservices, Kafka, Kubernetes, and PostgreSQL. Builder of TaskForge, a distributed task orchestration platform.">
+    <meta name="keywords" content="Go Developer, Backend Developer, Microservices, Kafka, Kubernetes, Distributed Systems, PostgreSQL, Observability">
+    <!-- Open Graph (updated) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Mevlüt Kaan Karakoç | Backend Developer (Go)">
+    <meta property="og:description" content="Building distributed systems with Go, Kafka, Kubernetes, and observability. Creator of TaskForge.">
+    <meta property="og:url" content="https://kaankarakoc42.github.io/">
+    <meta property="og:image" content="https://kaankarakoc42.github.io/images/kaan.jpg">
+    <!-- Twitter (updated) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mevlüt Kaan Karakoç | Backend Developer (Go)">
+    <meta name="twitter:description" content="Go · Microservices · Kafka · Kubernetes · TaskForge">
+    <meta name="twitter:image" content="https://kaankarakoc42.github.io/images/kaan.jpg">
+    <title>Mevlüt Kaan Karakoç | Backend Developer (Go) | Distributed Systems</title>
     <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Mevlüt Kaan Karakoç",
+      "jobTitle": "Backend Developer",
+      "url": "https://kaankarakoc42.github.io/",
+      "image": "https://kaankarakoc42.github.io/images/kaan.jpg",
+      "description": "Backend Developer focused on Go, microservices, and distributed systems. Building production-minded, observable platforms like TaskForge on Kafka, Kubernetes, and PostgreSQL.",
+      "email": "mailto:karakockaan326@gmail.com",
+      "sameAs": [
+        "https://github.com/kaankarakoc42",
+        "https://www.linkedin.com/in/mevlutkaankarakoc/"
+      ]
+    }
+    </script>
     <style>
         :root {
-            --primary-color: #00ff9d;
-            --secondary-color: #00ffcc;
+            --primary-color: #3b82f6;
+            --secondary-color: #60a5fa;
             --bg-color: #0a0a0a;
             --bg-card: #1a1a1a;
             --text-color: #ffffff;
             --text-light: #a0a0a0;
-            --accent-color: #ff3366;
+            --accent-color: #8b5cf6;
             --border-color: #333333;
             --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
         }
@@ -62,7 +89,17 @@
             font-weight: 700;
             color: var(--primary-color);
             text-decoration: none;
-            text-shadow: 0 0 10px rgba(0, 255, 157, 0.3);
+            text-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .logo-gopher {
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            vertical-align: middle;
+            filter: drop-shadow(0 0 6px rgba(59, 130, 246, 0.35));
         }
 
         .nav-links {
@@ -108,7 +145,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(45deg, rgba(0, 255, 157, 0.1), rgba(0, 255, 204, 0.1));
+            background: linear-gradient(45deg, rgba(59, 130, 246, 0.12), rgba(96, 165, 250, 0.12));
             z-index: 1;
         }
 
@@ -128,7 +165,7 @@
             background: var(--gradient);
             padding: 4px;
             margin-bottom: 2rem;
-            box-shadow: 0 0 20px rgba(0, 255, 157, 0.3);
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
             transition: transform 0.3s ease;
         }
 
@@ -141,13 +178,30 @@
             font-size: 2.5rem;
             margin-bottom: 1rem;
             color: var(--text-color);
-            text-shadow: 0 0 10px rgba(0, 255, 157, 0.3);
+            text-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
         }
 
         .hero p {
             font-size: 1.25rem;
             color: var(--text-light);
             margin-bottom: 2rem;
+        }
+        .badges {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.25rem 0.6rem;
+            border-radius: 9999px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-card);
+            color: var(--text-color);
+            font-size: 0.9rem;
         }
 
         .cta-buttons {
@@ -174,7 +228,7 @@
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 255, 157, 0.3);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
         }
 
         .btn-outline {
@@ -331,7 +385,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(45deg, rgba(0, 255, 157, 0.1), rgba(0, 255, 204, 0.1));
+            background: linear-gradient(45deg, rgba(59, 130, 246, 0.12), rgba(96, 165, 250, 0.12));
             z-index: 1;
         }
 
@@ -394,7 +448,7 @@
 
         .contact-card a:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 255, 157, 0.3);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
         }
 
         .footer {
@@ -631,7 +685,7 @@
             visibility: hidden;
             transition: all 0.3s ease;
             z-index: 1000;
-            box-shadow: 0 0 15px rgba(0, 255, 157, 0.3);
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
         }
 
         .scroll-top.visible {
@@ -641,7 +695,7 @@
 
         .scroll-top:hover {
             transform: translateY(-3px);
-            box-shadow: 0 0 20px rgba(0, 255, 157, 0.5);
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
         }
 
         /* Easter egg styles */
@@ -706,7 +760,7 @@
 
         .theme-toggle:hover {
             transform: scale(1.1);
-            box-shadow: 0 0 15px rgba(0, 255, 157, 0.3);
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
         }
 
         /* Add hidden flag styles */
@@ -717,7 +771,7 @@
             z-index: 9999;
             font-family: 'Fira Code', monospace;
             color: var(--primary-color);
-            text-shadow: 0 0 10px rgba(0, 255, 157, 0.3);
+            text-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
             transition: opacity 0.3s ease;
         }
 
@@ -761,7 +815,7 @@
 
     <nav class="navbar">
         <div class="navbar-content">
-            <a href="#" class="logo">MKK</a>
+            <a href="#" class="logo"><img src="images/go-logo-white.svg" alt="Go gopher" class="logo-gopher"> MKK</a>
             <button id="menuToggle" class="menu-toggle">
                 <i class="fas fa-bars"></i>
             </button>
@@ -776,12 +830,14 @@
 
     <section class="hero">
         <div class="hero-content">
-            <img src="images/kaan.jpg" alt="Mevlüt Kaan Karakoç" class="profile-image">
+            <img src="images/kaan.jpg" alt="Mevlüt Kaan Karakoç" class="profile-image" loading="lazy" decoding="async">
             <h1>Mevlüt Kaan Karakoç</h1>
-            <p>Fullstack Developer | Mobile App Developer | Linux Enthusiast | Ethical Hacker</p>
+            <p>Backend Developer focused on Go, microservices, and distributed systems.</p>
+            <p>Building scalable event-driven systems with Kafka, Kubernetes, and PostgreSQL.</p>
             <div class="cta-buttons">
                 <a href="#contact" class="btn btn-primary">Get in Touch</a>
                 <a href="#projects" class="btn btn-outline">View Projects</a>
+                <!--<a href="./MevlutKaanKarakoc_BackendDeveloper.pdf" class="btn btn-outline" download>Download Resume</a>-->
             </div>
         </div>
     </section>
@@ -790,19 +846,19 @@
         <h2 class="section-title">About Me</h2>
         <div class="skills-grid">
             <div class="skill-card">
-                <i class="fas fa-code skill-icon"></i>
-                <h3>Fullstack Development</h3>
-                <p>Specialized in building scalable web applications using modern technologies and best practices.</p>
+                <i class="fas fa-code-branch skill-icon"></i>
+                <h3>Go Backend Development</h3>
+                <p>Designing and implementing production-grade services in Go with clear interfaces, thorough tests, and performance-aware code.</p>
             </div>
             <div class="skill-card">
-                <i class="fas fa-mobile-alt skill-icon"></i>
-                <h3>Mobile Development</h3>
-                <p>Creating cross-platform mobile applications using React Native and Flutter.</p>
+                <i class="fas fa-project-diagram skill-icon"></i>
+                <h3>Distributed & Event-Driven Systems</h3>
+                <p>Building microservices that communicate asynchronously via Kafka, with reliable scheduling, retries, and idempotency.</p>
             </div>
             <div class="skill-card">
-                <i class="fas fa-shield-alt skill-icon"></i>
-                <h3>Cybersecurity</h3>
-                <p>Expert in web security, penetration testing, and ethical hacking.</p>
+                <i class="fas fa-chart-line skill-icon"></i>
+                <h3>Reliability & Observability</h3>
+                <p>Operational focus: metrics, tracing, and logging using Prometheus, Grafana, Jaeger, and OpenTelemetry to debug real systems.</p>
             </div>
         </div>
     </section>
@@ -811,24 +867,34 @@
         <h2 class="section-title">Technical Skills</h2>
         <div class="skills-grid">
             <div class="skill-card">
-                <i class="fas fa-server skill-icon"></i>
-                <h3>Linux Administration</h3>
-                <p>Server management, deployment, and system optimization.</p>
+                <i class="fas fa-terminal skill-icon"></i>
+                <h3>Languages</h3>
+                <p>Go, JavaScript, Python</p>
             </div>
             <div class="skill-card">
-                <i class="fas fa-laptop-code skill-icon"></i>
-                <h3>Frontend Development</h3>
-                <p>React, JavaScript, HTML5, CSS3, and modern UI frameworks.</p>
+                <i class="fas fa-server skill-icon"></i>
+                <h3>Backend</h3>
+                <p>REST APIs, WebSockets, GORM</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-project-diagram skill-icon"></i>
+                <h3>Architecture</h3>
+                <p>Microservices, Event-Driven Systems, Distributed Systems</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-cubes skill-icon"></i>
+                <h3>Infrastructure</h3>
+                <p>Docker, Kubernetes (k3s), Nginx, GitHub Actions, CI/CD</p>
             </div>
             <div class="skill-card">
                 <i class="fas fa-database skill-icon"></i>
-                <h3>Backend Development</h3>
-                <p>Django, FastAPI, Node.js, and database management.</p>
+                <h3>Data & Messaging</h3>
+                <p>PostgreSQL, Kafka</p>
             </div>
             <div class="skill-card">
-                <i class="fas fa-network-wired skill-icon"></i>
-                <h3>DevOps</h3>
-                <p>CI/CD, Docker, Kubernetes, and cloud services.</p>
+                <i class="fas fa-chart-area skill-icon"></i>
+                <h3>Observability</h3>
+                <p>Prometheus, Grafana, Jaeger, OpenTelemetry</p>
             </div>
         </div>
     </section>
@@ -837,27 +903,19 @@
         <h2 class="section-title">Featured Projects</h2>
         <div class="projects-grid">
             <div class="project-card">
-                <img src="images/taskdone.png" alt="Project 1" class="project-image">
+                <img src="images/taskforge.png" alt="TaskForge Distributed Task Orchestration" class="project-image" loading="lazy" decoding="async">
                 <div class="project-content">
-                    <h3>Web Application</h3>
-                    <p>A full-stack web application built with React and Django.</p>
-                    <a href="https://taskdone.com.tr" class="btn btn-outline">View Project</a>
+                    <h3>TaskForge</h3>
+                    <p>Distributed task orchestration platform built in Go. Microservices communicate asynchronously over Kafka; includes scheduler and retry mechanisms, real-time WebSocket updates, PostgreSQL persistence, and end-to-end observability with Prometheus, Grafana, Jaeger, and OpenTelemetry. Containerized and deployable on Docker/Kubernetes.</p>
+                    <a href="#" class="btn btn-outline">Project Overview</a>
                 </div>
             </div>
             <div class="project-card">
-                <img src="images/mobile.jpg" alt="Project 2" class="project-image">
+                <img src="images/k8s-chatapp.png" alt="Chat App Project" class="project-image" loading="lazy" decoding="async">
                 <div class="project-content">
-                    <h3>Mobile App</h3>
-                    <p>Cross-platform mobile application using React Native.</p>
-                    <a href="https://taskdone.com.tr" class="btn btn-outline">View Project</a>
-                </div>
-            </div>
-            <div class="project-card">
-                <img src="images/secode.png" alt="Project 3" class="project-image">
-                <div class="project-content">
-                    <h3>Cyber Security Community</h3>
-                    <p>I have created a community for cyber security,In secode we are sharpening your skills for ctf competitions and industrial security tasks.</p>
-                    <a href="https://secodecommunity.github.io" class="btn btn-outline">View Project</a>
+                    <h3>Real-Time Messaging System (Microservices)</h3>
+                    <p>A real-time messaging system built with WebSocket microservices, Redis Pub/Sub, and Kafka. Designed for horizontal scaling, event-driven communication, and distributed state management on Kubernetes.</p>
+                    <a href="#" class="btn btn-outline">Details</a>
                 </div>
             </div>
         </div>
@@ -1062,7 +1120,7 @@
             ctx.fillStyle = "rgba(0, 0, 0, 0.04)";
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-            ctx.fillStyle = "#0F0";
+            ctx.fillStyle = "#3b82f6";
             ctx.font = fontSize + "px monospace";
 
             for (let i = 0; i < drops.length; i++) {
@@ -1105,7 +1163,7 @@
             isDarkTheme = !isDarkTheme;
             document.body.style.backgroundColor = isDarkTheme ? '#0a0a0a' : '#ffffff';
             document.body.style.color = isDarkTheme ? '#ffffff' : '#0a0a0a';
-            themeToggle.style.color = isDarkTheme ? '#00ff9d' : '#ff3366';
+            themeToggle.style.color = isDarkTheme ? '#3b82f6' : '#8b5cf6';
         }
 
         // Secret Section
@@ -1129,9 +1187,9 @@
         });
 
         // Console Easter Egg
-        console.log('%cWelcome to the console!', 'color: #00ff9d; font-size: 20px; font-weight: bold;');
-        console.log('%cIf you\'re reading this, you\'re probably a developer too!', 'color: #00ffcc; font-size: 16px;');
-        console.log('%cTry typing "secret" on your keyboard...', 'color: #ff3366; font-size: 14px;');
+        console.log('%cWelcome to the console!', 'color: #3b82f6; font-size: 20px; font-weight: bold;');
+        console.log('%cIf you\'re reading this, you\'re probably a developer too!', 'color: #60a5fa; font-size: 16px;');
+        console.log('%cTry typing "secret" on your keyboard...', 'color: #8b5cf6; font-size: 14px;');
 
         // Show theme toggle on hover
         document.addEventListener('mousemove', (e) => {
@@ -1196,9 +1254,9 @@
         };
 
         // Flag 1: Console flag
-        console.log('%cMKK{1_f0und_th3_f1rst_fl4g}', 'color: #00ff9d; font-size: 20px; font-weight: bold;');
-        console.log('%cIf you\'re reading this, you\'re probably a developer too!', 'color: #00ffcc; font-size: 16px;');
-        console.log('%cTry typing "secret" on your keyboard...', 'color: #ff3366; font-size: 14px;');
+        console.log('%cMKK{1_f0und_th3_f1rst_fl4g}', 'color: #3b82f6; font-size: 20px; font-weight: bold;');
+        console.log('%cIf you\'re reading this, you\'re probably a developer too!', 'color: #60a5fa; font-size: 16px;');
+        console.log('%cTry typing "secret" on your keyboard...', 'color: #8b5cf6; font-size: 14px;');
 
         // Flag 2: Source code flag (already in HTML)
         // Flag 3: Konami code flag
