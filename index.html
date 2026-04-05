@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Backend Developer specializing in Go, microservices, Kafka, Kubernetes, and PostgreSQL. Builder of TaskForge, a distributed task orchestration platform.">
+    <meta name="description" content="Mevlüt Kaan Karakoç — Backend Developer (Go). Building production-grade distributed systems. Creator of TaskForge (Kafka + Kubernetes).">
     <meta name="keywords" content="Go Developer, Backend Developer, Microservices, Kafka, Kubernetes, Distributed Systems, PostgreSQL, Observability">
     <!-- Open Graph (updated) -->
     <meta property="og:type" content="website">
@@ -16,16 +16,15 @@
     <meta name="twitter:title" content="I build distributed systems that don’t break.">
     <meta name="twitter:description" content="Go · Microservices · Kafka · Kubernetes · TaskForge">
     <meta name="twitter:image" content="https://kaankarakoc.com/images/kaan.jpg">
-    <title>Mevlüt Kaan Karakoç | Backend Developer (Go) | Distributed Systems</title>
-    <link rel="icon" type="image/png" href="images/favicon.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Mevlüt Kaan Karakoç | Backend Developer (Go)</title>
+	<link rel="icon" href="./mkk.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="./mkk.ico" type="image/x-icon">
     <script type="application/ld+json">
         {
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Mevlüt Kaan Karakoç",
-        "jobTitle": "Backend Developer",
+        "jobTitle": "Backend Developer (Go)",
         "url": "https://kaankarakoc.com/",
         "image": "https://kaankarakoc.com/images/kaan.jpg",
         "description": "Backend Developer focused on Go, microservices, and distributed systems. Creator of TaskForge.",
@@ -57,6 +56,7 @@
             "Kafka",
             "Kubernetes",
             "Distributed Systems",
+            "Docker",
             "PostgreSQL",
             "Observability"
         ]
@@ -69,7 +69,7 @@
             --bg-color: #0a0a0a;
             --bg-card: #1a1a1a;
             --text-color: #ffffff;
-            --text-light: #a0a0a0;
+			--text-light: #d1d5db;
             --accent-color: #8b5cf6;
             --border-color: #333333;
             --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
@@ -84,7 +84,7 @@
         body {
             background-color: var(--bg-color);
             color: var(--text-color);
-            font-family: 'Inter', sans-serif;
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
             line-height: 1.6;
             min-height: 100vh;
             overflow-x: hidden;
@@ -110,7 +110,7 @@
         }
 
         .logo {
-            font-family: 'Fira Code', monospace;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--primary-color);
@@ -137,7 +137,7 @@
             color: var(--text-color);
             text-decoration: none;
             font-weight: 500;
-            transition: all 0.3s ease;
+			transition: color 0.25s ease, transform 0.25s ease;
             position: relative;
         }
 
@@ -155,10 +155,14 @@
         .nav-links a:hover::after {
             width: 100%;
         }
+		.nav-links a:hover {
+			color: #e6f0ff;
+			transform: translateY(-1px);
+		}
 
-        .hero {
-            padding: 8rem 2rem 4rem;
-            background: radial-gradient(circle at center, #1a1a1a 0%, #0a0a0a 100%);
+		.hero {
+			padding: 7rem 2rem 3.5rem;
+            background: radial-gradient(1200px 800px at 50% -10%, rgba(59,130,246,0.12), transparent 50%), radial-gradient(circle at center, #141414 0%, #0a0a0a 100%);
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -183,15 +187,15 @@
         }
 
         .profile-image {
-            width: 200px;
-            height: 200px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid transparent;
-            background: var(--gradient);
-            padding: 4px;
+            border: 2px solid rgba(96,165,250,0.35);
+            background: radial-gradient(120px 120px at 50% 40%, rgba(96,165,250,0.15), transparent 60%);
+            padding: 3px;
             margin-bottom: 2rem;
-            box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+            box-shadow: 0 0 0 6px rgba(59,130,246,0.08), 0 0 25px rgba(59,130,246,0.25);
             transition: transform 0.3s ease;
         }
 
@@ -200,18 +204,62 @@
         }
 
         .hero h1 {
-            font-family: 'Fira Code', monospace;
-            font-size: 2.5rem;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-size: 2.75rem;
             margin-bottom: 1rem;
             color: var(--text-color);
             text-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
         }
 
-        .hero p {
-            font-size: 1.25rem;
+		.hero h2 {
+			font-size: 1.35rem;
             color: var(--text-light);
-            margin-bottom: 2rem;
+			margin-bottom: 1rem;
+            letter-spacing: 0.2px;
         }
+
+        .hero p {
+			font-size: 1.2rem;
+            color: var(--text-light);
+			margin-bottom: 1.25rem;
+        }
+		.hero .authority {
+			font-weight: 600;
+			color: #e6efff;
+			letter-spacing: 0.1px;
+		}
+
+        .proof-points {
+            display: inline-block;
+            text-align: left;
+			margin: 0 auto 1rem;
+            color: var(--text-light);
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+        .proof-points li {
+            list-style: "•  ";
+            margin-left: 0.5rem;
+        }
+		.tech-stack {
+			color: #cdd6e5;
+			opacity: 0.9;
+			font-size: 0.95rem;
+			letter-spacing: 0.3px;
+			margin: 0.25rem 0 1.25rem;
+		}
+		.text-link {
+			color: #cfe1ff;
+			text-decoration: none;
+			border-bottom: 1px solid rgba(207,225,255,0.35);
+			padding-bottom: 2px;
+			transition: color .2s ease, border-color .2s ease, text-shadow .2s ease;
+		}
+		.text-link:hover {
+			color: #ffffff;
+			border-color: rgba(255,255,255,0.6);
+			text-shadow: 0 0 12px rgba(99,102,241,0.45);
+		}
         .badges {
             display: flex;
             justify-content: center;
@@ -234,7 +282,7 @@
             display: flex;
             gap: 1rem;
             justify-content: center;
-            margin-bottom: 3rem;
+			margin-bottom: 2rem;
         }
 
         .btn {
@@ -243,29 +291,60 @@
             font-weight: 500;
             text-decoration: none;
             transition: all 0.3s ease;
-            font-family: 'Fira Code', monospace;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            position: relative;
+            isolation: isolate;
         }
 
         .btn-primary {
             background: var(--gradient);
             color: var(--bg-color);
             border: none;
+            box-shadow: 0 0 0 0 rgba(59,130,246,0.0);
         }
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+			box-shadow: 0 14px 34px rgba(59, 130, 246, 0.55), 0 0 26px rgba(96,165,250,0.45);
+        }
+
+        .btn-primary::after {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: inherit;
+            background: radial-gradient(120px 40px at 50% 120%, rgba(59,130,246,0.35), transparent 60%);
+            z-index: -1;
+            filter: blur(12px);
+            opacity: 0.6;
         }
 
         .btn-outline {
-            border: 2px solid var(--primary-color);
-            color: var(--primary-color);
+            border: 2px solid rgba(59,130,246,0.6);
+            color: #e6f0ff;
+            background: transparent;
+            overflow: hidden;
         }
 
         .btn-outline:hover {
-            background: var(--primary-color);
+            background: linear-gradient(90deg, rgba(59,130,246,0.18), rgba(96,165,250,0.18));
             color: var(--bg-color);
             transform: translateY(-2px);
+			box-shadow: 0 10px 26px rgba(59,130,246,0.35), inset 0 0 0 999px rgba(255,255,255,0.02);
+        }
+
+        .btn-outline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -150%;
+            width: 150%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+            transition: left 0.45s ease;
+        }
+        .btn-outline:hover::before {
+            left: 150%;
         }
 
         .section {
@@ -275,7 +354,7 @@
         }
 
         .section-title {
-            font-family: 'Fira Code', monospace;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
             font-size: 2rem;
             margin-bottom: 2rem;
             color: var(--text-color);
@@ -391,7 +470,7 @@
         .project-content h3 {
             margin-bottom: 0.5rem;
             color: var(--text-color);
-            font-family: 'Fira Code', monospace;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
         }
 
         .project-content p {
@@ -452,7 +531,7 @@
         .contact-card h3 {
             margin-bottom: 1rem;
             color: var(--text-color);
-            font-family: 'Fira Code', monospace;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
         }
 
         .contact-card p {
@@ -467,7 +546,7 @@
             color: var(--bg-color);
             text-decoration: none;
             border-radius: 0.5rem;
-            font-family: 'Fira Code', monospace;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
             font-weight: 500;
             transition: all 0.3s ease;
         }
@@ -527,7 +606,7 @@
 
         .onion-content h3 {
             color: var(--primary-color);
-            font-family: 'Fira Code', monospace;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
             margin-bottom: 1rem;
         }
 
@@ -543,7 +622,7 @@
             color: var(--bg-color);
             text-decoration: none;
             border-radius: 0.5rem;
-            font-family: 'Fira Code', monospace;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
             font-weight: 500;
             transition: all 0.3s ease;
             position: relative;
@@ -637,12 +716,13 @@
             }
 
             .hero {
-                padding: 6rem 1rem 3rem;
+				padding: 5rem 1rem 2.5rem;
             }
 
             .hero h1 {
-                font-size: 2rem;
+                font-size: 2.25rem;
             }
+			.hero h2 { font-size: 1.2rem; }
 
             .cta-buttons {
                 flex-direction: column;
@@ -779,7 +859,7 @@
             opacity: 1;
         }
 
-        .theme-toggle i {
+        .theme-toggle span {
             font-size: 1.5rem;
             color: var(--primary-color);
         }
@@ -811,17 +891,13 @@
     <div class="scroll-progress"></div>
 
     <!-- Add scroll to top button -->
-    <div class="scroll-top">
-        <i class="fas fa-arrow-up"></i>
-    </div>
+    <div class="scroll-top"><span aria-hidden="true">↑</span></div>
 
     <!-- Add matrix rain canvas -->
     <canvas class="matrix-rain"></canvas>
 
     <!-- Add theme toggle -->
-    <div class="theme-toggle">
-        <i class="fas fa-palette"></i>
-    </div>
+    <div class="theme-toggle"><span aria-hidden="true">🎨</span></div>
 
     <!-- Add secret section -->
     <div class="secret-section">
@@ -841,9 +917,9 @@
 
     <nav class="navbar">
         <div class="navbar-content">
-            <a href="#" class="logo"><img src="images/go-logo-white.svg" alt="Go gopher" class="logo-gopher"> MKK</a>
+			<a href="#" class="logo">Kaan Karakoç</a>
             <button id="menuToggle" class="menu-toggle">
-                <i class="fas fa-bars"></i>
+                ☰
             </button>
             <div class="nav-links">
                 <a href="#about">About</a>
@@ -858,11 +934,18 @@
         <div class="hero-content">
             <img src="images/kaan.jpg" alt="Mevlüt Kaan Karakoç" class="profile-image" loading="lazy" decoding="async">
             <h1>Mevlüt Kaan Karakoç</h1>
-            <p>Backend Developer focused on Go, microservices, and distributed systems.</p>
-            <p>Building scalable event-driven systems with Kafka, Kubernetes, and PostgreSQL.</p>
+            <h2>Backend Developer (Go) | Distributed Systems</h2>
+            <p>Backend Developer building production-grade distributed systems with Go.</p>
+            <p>Creator of TaskForge — an event-driven task orchestration platform powered by Kafka and Kubernetes.</p>
+			<p class="authority">I build systems that don’t fall apart under failure.</p>
+		  	<ul class="proof-points">
+				<li>Built TaskForge — Kafka-based distributed task system</li>
+				<li>Designed resilient microservices handling retries & failures</li>
+		  	</ul>
+			<p class="tech-stack">Go · Kafka · Kubernetes · PostgreSQL</p>
             <div class="cta-buttons">
-                <a href="#contact" class="btn btn-primary">Get in Touch</a>
-                <a href="#projects" class="btn btn-outline">View Projects</a>
+				<a href="https://github.com/kaankarakoc42/taskforge-showcase" target="_blank" rel="noopener" class="btn btn-primary">View TaskForge</a>
+				<a href="#contact" class="btn btn-outline">Contact Me</a>
                 <!--<a href="./MevlutKaanKarakoc_BackendDeveloper.pdf" class="btn btn-outline" download>Download Resume</a>-->
             </div>
         </div>
@@ -928,12 +1011,12 @@
     <section id="projects" class="section">
         <h2 class="section-title">Featured Projects</h2>
         <div class="projects-grid">
-            <div class="project-card">
+            <div class="project-card" id="taskforge">
                 <img src="images/taskforge.png" alt="TaskForge Distributed Task Orchestration" class="project-image" loading="lazy" decoding="async">
                 <div class="project-content">
                     <h3>TaskForge</h3>
                     <p>Distributed task orchestration platform built in Go. Microservices communicate asynchronously over Kafka; includes scheduler and retry mechanisms, real-time WebSocket updates, PostgreSQL persistence, and end-to-end observability with Prometheus, Grafana, Jaeger, and OpenTelemetry. Containerized and deployable on Docker/Kubernetes.</p>
-                    <a href="#" class="btn btn-outline">Project Overview</a>
+                    <a href="https://github.com/kaankarakoc42/taskforge-showcase" target="_blank" rel="noopener" class="btn btn-outline">View TaskForge →</a>
                 </div>
             </div>
             <div class="project-card">
@@ -941,7 +1024,7 @@
                 <div class="project-content">
                     <h3>Real-Time Messaging System (Microservices)</h3>
                     <p>A real-time messaging system built with WebSocket microservices, Redis Pub/Sub, and Kafka. Designed for horizontal scaling, event-driven communication, and distributed state management on Kubernetes.</p>
-                    <a href="#" class="btn btn-outline">Details</a>
+                    <a href="#contact" class="btn btn-outline">Details</a>
                 </div>
             </div>
         </div>
@@ -951,19 +1034,19 @@
         <h2 class="section-title">Get in Touch</h2>
         <div class="contact-grid">
             <div class="contact-card">
-                <i class="fas fa-envelope contact-icon"></i>
+                <span class="contact-icon" aria-hidden="true">✉️</span>
                 <h3>Email</h3>
                 <p>contact@kaankarakoc.com</p>
                 <a href="mailto:contact@kaankarakoc.com">Send Email</a>
             </div>
             <div class="contact-card">
-                <i class="fab fa-linkedin contact-icon"></i>
+                <span class="contact-icon" aria-hidden="true">🔗</span>
                 <h3>LinkedIn</h3>
                 <p>linkedin.com/in/mevlutkaankarakoc</p>
                 <a href="https://www.linkedin.com/in/mevlutkaankarakoc/" target="_blank">Connect</a>
             </div>
             <div class="contact-card">
-                <i class="fab fa-github contact-icon"></i>
+                <span class="contact-icon" aria-hidden="true">🐙</span>
                 <h3>GitHub</h3>
                 <p>github.com/kaankarakoc42</p>
                 <a href="https://github.com/kaankarakoc42" target="_blank">View Profile</a>
@@ -973,10 +1056,10 @@
 
     <footer class="footer">
         <div class="social-links">
-            <a href="https://github.com/kaankarakoc42"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/mevlutkaankarakoc/"><i class="fab fa-linkedin"></i></a>
-            <a href="mailto:karakockaan326@gmail.com"><i class="fas fa-envelope"></i></a>
-            <a href="#" id="onion-trigger" title="Click to discover something hidden"><i class="fas fa-user-secret"></i></a>
+            <a href="https://github.com/kaankarakoc42" aria-label="GitHub">🐙</a>
+            <a href="https://www.linkedin.com/in/mevlutkaankarakoc/" aria-label="LinkedIn">🔗</a>
+            <a href="mailto:karakockaan326@gmail.com" aria-label="Email">✉️</a>
+            <a href="#" id="onion-trigger" title="Click to discover something hidden" aria-label="Secret">🕵️</a>
         </div>
         <p>&copy; 2026 Mevlüt Kaan Karakoç. All rights reserved.</p>
     </footer>
@@ -984,7 +1067,7 @@
     <!-- Hidden onion section -->
     <div class="onion-section">
         <div class="onion-content">
-            <i class="fas fa-times close-onion"></i>
+            <span class="close-onion" aria-label="Close">×</span>
             <h3>Hidden Gateway</h3>
             <p>You've discovered a secret entrance to my onion mirror. Access my site through the Tor network for enhanced privacy and security.</p>
             <a href="http://q64dnpsu2js22axo22dln5xvnripijrvhmxbpyvliu2bggtihtzadvyd.onion" class="onion-link" target="_blank">
@@ -1235,16 +1318,14 @@
 
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
-            menuToggle.querySelector('i').classList.toggle('fa-bars');
-            menuToggle.querySelector('i').classList.toggle('fa-times');
+            menuToggle.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
         });
 
         // Close mobile menu when clicking a link
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
-                menuToggle.querySelector('i').classList.add('fa-bars');
-                menuToggle.querySelector('i').classList.remove('fa-times');
+                menuToggle.textContent = '☰';
             });
         });
 
@@ -1252,8 +1333,7 @@
         document.addEventListener('click', (e) => {
             if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
                 navLinks.classList.remove('active');
-                menuToggle.querySelector('i').classList.add('fa-bars');
-                menuToggle.querySelector('i').classList.remove('fa-times');
+                menuToggle.textContent = '☰';
             }
         });
         function hideOnMobile() {
